@@ -132,6 +132,10 @@ contract JccMultiSigLight is IMultiSig {
     return _topic.core.hash;
   }
 
+  function getSuggestion(uint256 _id) public view returns (Proposal.PublicTopic memory topic) {
+    return _proposals.getTopic(_id);
+  }
+
   // 根据id获取批准状态
   function isApproved(uint256 _id) public view returns (bool approved) {
     uint256 _count = 0;
